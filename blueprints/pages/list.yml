@@ -1,0 +1,42 @@
+title: Board
+pages: true
+files: false
+
+columns:
+
+    # Board Members
+    main:
+        width: 2/3
+        sections:
+            content:
+                headline: Intro
+                type: fields
+                fields:
+                    # intro:
+                    #     label: Info
+                    #     type: textarea
+                    members:
+                        label: BID Board Members
+                        type: structure
+                        fields:
+                            name:
+                                label: Name
+                                type: text
+                                width: 1/2
+                            title:
+                                label: Title
+                                type: text
+                                width: 1/2
+                            img:
+                                label: Image
+                                type: files
+                                max: 1                                
+
+    # Profile Image
+    # aside:
+    #     width: 1/3
+    #     sections:
+    #         board_members:
+    #             headline: Board Members
+    #             type: pages
+    #             templates: list-item

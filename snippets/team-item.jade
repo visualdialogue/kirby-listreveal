@@ -1,0 +1,38 @@
+//- get team member data to see if bio exists
+-$team_memberData = $site->teamMemberData($team_member);
+-$team_memberDataDecoded = json_decode($team_memberData, true);
+-$team_memberBio = $team_memberDataDecoded['bio']
+-$clickable = ('' != $team_memberBio ? true : false)
+-$image = $team_member->image($team_member->profile())
+
+li.team-member.revealer(
+    class="<?= e($clickable, 'clickable') ?> <?= e(!$image, 'no-profile-image') ?>"
+    data-button="<?= str::slug($team_member->title()) ?>-desktop" 
+    data-area="team-member-sub-section-desktop" 
+    data-closex="team-member-sub-section-desktop-x"
+    data-team-member-data='<?= htmlspecialchars($team_memberData) ?>'
+    )
+
+    //- can't use imagekit b/c need to use focuscrop for square headshots
+    -if($image):
+        picture.profile-image
+            //- retina and desktop
+            //- 828 wide b/c iphone plusses are 414px wide, from http://www.kylejlarson.com/blog/iphone-6-screen-size-web-design-tips/
+            source(srcset="<?= $image->focusCrop(200,200,['quality' => 80])->url() ?> 1x, <?= $image->focusCrop(399,399,['quality' => 80])->url() ?> 2x" media="(min-width: 768px)")
+            //- mobile/default image, use srcset instead of src to prevent double download per https://github.com/scottjehl/picturefill
+            img(srcset="<?= $image->focusCrop(399,399,['quality' => 80])->url() ?>" alt="<?= $team_member->title() ?>")
+    -else:
+        img.team-member-image(src="https://via.placeholder.com/170")
+        //- picture.profile-image
+            //- img(src="http://placehold.it/400x400" alt="<?= $team_member->title() ?>")
+            img(src="/assets/images/profile.png" alt="<?= $team_member->title() ?>")
+    -endif
+
+
+    .team-member-details
+        .team-member-name!= $team_member->title()
+        -if('' != $team_member->position()):
+            .team-member-position!= $team_member->position()
+        -else:
+            .team-member-position Title
+        -endif

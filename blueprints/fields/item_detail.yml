@@ -1,0 +1,24 @@
+type: group
+fields:
+    position:
+        label: Position
+        type: text
+        width: 1/2
+    bio:
+        label: Bio
+        type: textarea    
+    email:
+        label: Email
+        type: text
+        width: 1/2
+    telephone:
+        label: Telephone
+        type: text
+        width: 1/2
+
+
+    # text:
+    #     label: Text
+    #     type: textarea
+    #     required: true
+

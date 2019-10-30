@@ -1,0 +1,8 @@
+# Member Files
+type: group
+fields:
+    profile:
+        label: Profile Image
+        type: files
+        max: 1
+        notes: should be xxx by xxx

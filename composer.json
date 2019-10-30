@@ -1,0 +1,17 @@
+{
+  "name": "visualdialogue/kirby-list-reveal",
+  "description": "List with items that expand to reveal more info via ajax",
+  "type": "kirby-plugin",
+  "license": "MIT",
+  "authors": [{
+    "name": "Luke Hatfield",
+    "email": "luke@visualdialogue.com"
+  }],
+
+  "require": {
+    "getkirby/composer-installer": "^1.1"
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}

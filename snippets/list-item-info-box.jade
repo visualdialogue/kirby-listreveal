@@ -1,0 +1,15 @@
+li#list-item-info-box.list-item-info-box
+    .list-item-info-box-inner
+        //- wrapper to bring in front of blue bg
+        .item-info-wrapper
+            .item-info-left
+                img.item-image
+            .item-info-right
+                .item-name
+                .item-position
+                .item-bio
+                .item-info
+                    p.item-telephone: a(href="tel:")
+                    p.item-email: a(href="email:")
+            .item-close-button.item-close-button
+                svg.close-icon(viewBox="0 0 48 48"): use(xlink:href="#close3")

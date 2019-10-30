@@ -1,0 +1,28 @@
+title: Board Member
+pages: false
+files: false
+
+columns:
+
+  # Member Detail
+  left:
+    width:          2/3
+    sections:
+      member_detail:
+        headline: Fields2
+        type:       fields
+        extends:    member_detail
+
+
+  # Profile Image
+  right:
+    width:          1/3
+    sections:
+      files:
+        headline: Files
+        type: fields
+        extends: member_files
+
+      # meta:
+      #   type:       fields
+      #   extends:    eventmeta

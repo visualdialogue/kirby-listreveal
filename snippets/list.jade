@@ -1,0 +1,8 @@
+.page-core
+    ul.list
+        -foreach($section->children()->visible() as $listItem):
+            -snippet('list-item', array('listItem' => $listItem))
+        -endforeach
+        
+        // list item info box
+        -snippet('list-item-info-box')

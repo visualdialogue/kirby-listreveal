@@ -1,0 +1,27 @@
+// info box
+li#member-info-box.member-info-box
+    .member-info-box-inner
+        //- wrapper to bring in front of blue bg
+        .member-info-wrapper
+            .member-info-left
+                #glide.glide
+                    .glide__track(data-glide-el="track")
+                        ul.glide__slides.member-info-images
+                            li.glide__slide.member-info-picture-wrapper
+                                picture.member-info-picture
+                                    source.member-info-image(srcset="" media="(min-width: 769px)" )
+                                    //- mobile/default image, use srcset instead of src to prevent double download per https://github.com/scottjehl/picturefill
+                                    img.member-info-image2(srcset="" alt="")
+                    #member-glide-bullets.glide__bullets(data-glide-el="controls[nav]")
+                        button.glide__bullet(data-glide-dir="=0")
+            .member-info-right
+                .member-info-right-header
+                    .member-info-name
+                    .member-info-close-button.member-close-button
+                        svg.close-icon(viewBox="0 0 48 48"): use(xlink:href="#close")
+                .member-info-address
+                .member-info-description
+                .member-info-hours
+                .member-info-phone: a(href="tel:")
+                .member-info-email: a(href="mailto:")
+                .member-info-website: a(href="")            
